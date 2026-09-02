@@ -10,7 +10,7 @@ anchorFrame:SetClampedToScreen(true)
 
 local spellID = 178341
 local bgAtlas = "uf-chi-bg"
-local iconTexture = "Interface\\AddOns\\OrtemisTools\\RisingSunKick\\chi_texture"
+local iconTexture = "Interface\\AddOns\\OrtemisTools\\RisingSunKick\\RSK_texture"
 local iconX = 0
 local iconY = 5
 
