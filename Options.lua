@@ -90,9 +90,36 @@ dDesc:SetTextColor(0.7, 0.7, 0.7)
 dDesc:SetWidth(600)
 dDesc:SetJustifyH("LEFT")
 
+-- Rising Sun Kick section
+local rskTitle = optionsFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+rskTitle:SetPoint("TOPLEFT", dDesc, "BOTTOMLEFT", 0, -24)
+rskTitle:SetText("Rising Sun Kick Orb")
+
+local rskEnabledCB = CreateFrame("CheckButton", nil, optionsFrame, "UICheckButtonTemplate")
+rskEnabledCB:SetSize(24, 24)
+rskEnabledCB:SetPoint("LEFT", rskTitle, "RIGHT", 8, 0)
+rskEnabledCB.text = rskEnabledCB:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+rskEnabledCB.text:SetPoint("LEFT", rskEnabledCB, "RIGHT", 2, 0)
+rskEnabledCB.text:SetText("Enabled")
+rskEnabledCB:SetScript("OnShow", function(self)
+    self:SetChecked(not OrtemisToolsDB.risingSunKick or OrtemisToolsDB.risingSunKick.enabled ~= false)
+end)
+rskEnabledCB:SetScript("OnClick", function(self)
+    OrtemisToolsDB.risingSunKick = OrtemisToolsDB.risingSunKick or {}
+    OrtemisToolsDB.risingSunKick.enabled = self:GetChecked()
+    if ns.RisingSunKick then ns.RisingSunKick.refresh() end
+end)
+
+local rskDesc = optionsFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+rskDesc:SetPoint("TOPLEFT", rskTitle, "BOTTOMLEFT", 0, -6)
+rskDesc:SetText("Displays an orb while Rising Sun Kick is off cooldown. Configure in Edit Mode.")
+rskDesc:SetTextColor(0.7, 0.7, 0.7)
+rskDesc:SetWidth(600)
+rskDesc:SetJustifyH("LEFT")
+
 -- Renewing Mist section
 local remTitle = optionsFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-remTitle:SetPoint("TOPLEFT", dDesc, "BOTTOMLEFT", 0, -24)
+remTitle:SetPoint("TOPLEFT", rskDesc, "BOTTOMLEFT", 0, -24)
 remTitle:SetText("Renewing Mist")
 
 local remEnabledCB = CreateFrame("CheckButton", nil, optionsFrame, "UICheckButtonTemplate")

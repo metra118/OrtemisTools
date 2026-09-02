@@ -318,6 +318,70 @@ local lem = LibStub("LibEditMode")
 				ns.DanceOfChiJi.updateLayout()
 			end,
 		},
+		{ kind = lem.SettingType.Divider },
+		-- Rising Sun Kick
+		{
+			name = "Rising Sun Kick: Hide from CDM",
+			kind = lem.SettingType.Checkbox,
+			default = true,
+			get = function() return OrtemisToolsDB.risingSunKick.hideDefault end,
+			set = function(_, value)
+				OrtemisToolsDB.risingSunKick.hideDefault = value
+				ns.RisingSunKick.refresh()
+			end,
+		},
+		{
+			name = "Size",
+			kind = lem.SettingType.Slider,
+			default = 30,
+			minValue = 4,
+			maxValue = 100,
+			valueStep = 1,
+			get = function() return OrtemisToolsDB.risingSunKick.size end,
+			set = function(_, value)
+				OrtemisToolsDB.risingSunKick.size = value
+				ns.RisingSunKick.updateLayout()
+			end,
+		},
+		{
+			name = "Icon Size",
+			kind = lem.SettingType.Slider,
+			default = 32,
+			minValue = 4,
+			maxValue = 50,
+			valueStep = 1,
+			get = function() return OrtemisToolsDB.risingSunKick.iconSize end,
+			set = function(_, value)
+				OrtemisToolsDB.risingSunKick.iconSize = value
+				ns.RisingSunKick.updateLayout()
+			end,
+		},
+		{
+			name = "X Offset",
+			kind = lem.SettingType.Slider,
+			default = 0,
+			minValue = -1000,
+			maxValue = 1000,
+			valueStep = 1,
+			get = function() return OrtemisToolsDB.risingSunKick.xOffset end,
+			set = function(_, value)
+				OrtemisToolsDB.risingSunKick.xOffset = value
+				ns.RisingSunKick.updateLayout()
+			end,
+		},
+		{
+			name = "Y Offset",
+			kind = lem.SettingType.Slider,
+			default = 48,
+			minValue = -1000,
+			maxValue = 1000,
+			valueStep = 1,
+			get = function() return OrtemisToolsDB.risingSunKick.yOffset end,
+			set = function(_, value)
+				OrtemisToolsDB.risingSunKick.yOffset = value
+				ns.RisingSunKick.updateLayout()
+			end,
+		},
 	})
 
 	lem:RegisterCallback("layout", function()

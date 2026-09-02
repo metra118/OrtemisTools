@@ -18,5 +18,6 @@ BallsAnchor/Core.lua
 ChiBalls/Core.lua
 Spiritfont/Core.lua
 DanceOfChiJi/Core.lua
+RisingSunKick/Core.lua
 RenewingMist/Core.lua
 Options.lua
