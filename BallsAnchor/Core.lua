@@ -321,17 +321,7 @@ local lem = LibStub("LibEditMode")
 		{ kind = lem.SettingType.Divider },
 		-- Rising Sun Kick
 		{
-			name = "Rising Sun Kick: Hide from CDM",
-			kind = lem.SettingType.Checkbox,
-			default = true,
-			get = function() return OrtemisToolsDB.risingSunKick.hideDefault end,
-			set = function(_, value)
-				OrtemisToolsDB.risingSunKick.hideDefault = value
-				ns.RisingSunKick.refresh()
-			end,
-		},
-		{
-			name = "Size",
+			name = "Rising Sun Kick: Size",
 			kind = lem.SettingType.Slider,
 			default = 30,
 			minValue = 4,
