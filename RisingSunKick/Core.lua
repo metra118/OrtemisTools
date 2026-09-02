@@ -10,6 +10,7 @@ anchorFrame:SetClampedToScreen(true)
 
 local spellID = 178341
 local bgAtlas = "uf-chi-bg"
+local iconTexture = "Interface\\AddOns\\OrtemisTools\\RisingSunKick\\chi_texture"
 local iconX = 0
 local iconY = 5
 
@@ -32,7 +33,7 @@ bar.icon:SetPoint("CENTER", iconX, iconY)
 bar.icon:SetMinMaxValues(0.5, 1, Enum.StatusBarInterpolation.Immediate)
 bar.icon:SetStatusBarTexture("")
 local iconTex = bar.icon:GetStatusBarTexture()
-iconTex:SetTexture(C_Spell.GetSpellTexture(spellID))
+iconTex:SetTexture(iconTexture)
 
 
 local function updateBars(readyValue)
